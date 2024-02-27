@@ -9,8 +9,8 @@
 }
 
 .grid-item {
-  width: 6%;
-  height: 6%;
+  width: 10%;
+  height: 10vh;
   border: solid rgb(0, 0, 0);
   overflow: hidden;
 }
