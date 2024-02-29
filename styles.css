@@ -5,12 +5,20 @@
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 1%;
 }
 
 .grid-item {
-  width: 10%;
-  height: 10vh;
   border: solid rgb(0, 0, 0);
   overflow: hidden;
+  border-width: thin;
+}
+
+.reset-grid {
+  font-size: 4rem;
+  position: relative;
+  top: 2rem;
+  left: 2rem;
 }
