@@ -1,19 +1,30 @@
-let userInput = prompt("enter how many squares you want per side: ");
-
 let grid = document.querySelector(".grid");
+let userInput = "";
+// for (let i = 1; i <= totalNumSquares; i++) {}
 
-let heightAndWidth = 100 / userInput;
-let totalNumSquares = userInput * userInput;
+let makeGrid = function () {
+  userInput = prompt("enter how many squares you want per side (max 100): ");
+  let heightAndWidth = 100 / userInput;
+  let totalNumSquares = userInput * userInput;
+  let i = 0;
+  while (userInput <= 100) {
+    i++;
+    if (i > totalNumSquares) {
+      break;
+    }
+    let gridItem = document.createElement("div");
+    gridItem.setAttribute("class", "grid-item");
+    grid.appendChild(gridItem);
+    gridItem.style.width = heightAndWidth + "%";
+    gridItem.style.height = heightAndWidth + "vh";
+    if (userInput >= 40) {
+      gridItem.style.width = 2 + "%";
+      gridItem.style.height = 3 + "vh";
+    }
+  }
+  if (userInput > 100) {
+    makeGrid();
+  }
+};
 
-for (let i = 1; i <= totalNumSquares; i++) {
-  let gridItem = document.createElement("div");
-  gridItem.setAttribute("class", "grid-item");
-  gridItem.textContent = i;
-  grid.appendChild(gridItem);
-  gridItem.style.width = heightAndWidth + "%";
-  gridItem.style.height = heightAndWidth + "vh";
-}
-// Change the background color
-
-// Change the font size
-// myElement.style.fontSize = "16px";
+makeGrid();
